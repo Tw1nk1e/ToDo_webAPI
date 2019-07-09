@@ -1,0 +1,27 @@
+type Query {
+    getTasks: [Task]
+    getCategories: [Category]
+}
+
+type Mutation {
+    addTask(task: String): Task
+    deleteTask(id: String): Boolean
+    changeTaskStatus(id: String): Boolean
+}
+
+type Task {
+    id: String
+    desc: String
+    status: Statuses
+    category: String
+}
+
+type Category {
+    id: String
+    name: String
+}
+
+enum Statuses {
+    DONE,
+    UNDONE
+}

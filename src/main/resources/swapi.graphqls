@@ -4,7 +4,7 @@ type Query {
 }
 
 type Mutation {
-    addTask(task: String): Task
+    addTask(desc: String, category: String): Task
     deleteTask(id: String): Boolean
     changeTaskStatus(id: String): Boolean
 }

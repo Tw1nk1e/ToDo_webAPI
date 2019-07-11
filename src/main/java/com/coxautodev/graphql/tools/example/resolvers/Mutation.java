@@ -14,8 +14,8 @@ public class Mutation implements GraphQLMutationResolver {
     @Autowired
     private TasksRepositories repository;
 
-    public Task addTask(String desc) {
-        return repository.save(new Task(desc));
+    public Task addTask(String desc, String category) {
+        return repository.save(new Task(desc, category));
     }
 
     public Boolean deleteTask(ObjectId id) {

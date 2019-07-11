@@ -14,8 +14,9 @@ public class Task {
     private Statuses status;
     private String category;
 
-    public Task(String desc) {
+    public Task(String desc, String category) {
         this.desc = desc;
+        this.category = category;
         this.status = Statuses.UNDONE;
     }
 }

@@ -1,11 +1,14 @@
 type Query {
     getTasks: [Task]
     getCategories: [Category]
+    getTasksByCategory(id: String): [Task]
 }
 
 type Mutation {
     addTask(desc: String, category: String): Task
+    addCategory(name: String): Category
     deleteTask(id: String): Boolean
+    deleteCategory(id: String): Boolean
     changeTaskStatus(id: String): Boolean
 }
 

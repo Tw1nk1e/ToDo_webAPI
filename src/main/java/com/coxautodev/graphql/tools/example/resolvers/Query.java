@@ -25,6 +25,10 @@ public class Query implements GraphQLQueryResolver {
         return tasksRepository.findAll();
     }
 
+    public List<Task> getTasksByCategory(String id) {
+        return tasksRepository.findAllByCategory(id);
+    }
+
     public List<Category> getCategories() {
         return categoriesRepositories.findAll();
     }

@@ -30,6 +30,7 @@ public class Mutation implements GraphQLMutationResolver {
 
     public Boolean deleteCategory(ObjectId id) {
         List<Task> tasksList = this.taskRepository.findAllByCategory(id.toString());
+        tasksList.forEach(task -> taskRepository.deleteById(new ObjectId(task.getId())));
         categoriesRepository.deleteById(id);
         return true;
     }
